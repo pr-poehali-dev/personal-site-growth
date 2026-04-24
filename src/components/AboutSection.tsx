@@ -1,80 +1,96 @@
+import Icon from "@/components/ui/icon";
+
 const principles = [
   {
+    icon: "Database",
     title: "Data-driven решения",
-    desc: "Каждая гипотеза проходит через данные: сбор, оценку, A/B-тест, измерение инкрементальности. Интуиция — стартовая точка, данные — финальный арбитр.",
+    desc: "Каждая гипотеза проходит через данные: сбор, оценку, A/B-тест, измерение инкрементальности.",
   },
   {
-    title: "Портфельный подход к росту",
-    desc: "Одновременно веду 80+ growth-инициатив в единой системе: гипотеза → оценка → эксперимент → еженедельный статус. Суммарный вклад исчисляется сотнями млрд руб.",
+    icon: "Layers",
+    title: "Портфельный подход",
+    desc: "Одновременно ведём 80+ growth-инициатив в единой системе с еженедельным статусом и кросс-функциональными владельцами.",
   },
   {
-    title: "Unit-экономика как язык",
-    desc: "CAC, LTV, payback, ARPPU, AOV — не просто отчётность, а инструмент принятия решений по каналам, продукту и бюджету.",
+    icon: "Calculator",
+    title: "Unit-экономика",
+    desc: "CAC, LTV, payback, ARPPU, AOV — не просто отчётность, а инструмент принятия решений по каналам и бюджету.",
   },
   {
+    icon: "GitBranch",
     title: "Bottom-up планирование",
-    desc: "Заменяю top-down KPI на детальную верификацию снизу. Отклонения сокращаются с 15–20% до 2–3%, прозрачность и скорость реакции растут.",
+    desc: "Заменяем top-down KPI на детальную верификацию снизу. Отклонения сокращаются с 15–20% до 2–3%.",
   },
   {
-    title: "Кросс-функциональная скорость",
-    desc: "Выстраиваю SLA с продуктом, аналитикой, финансами и операционными командами. Time-to-Market сокращался в 2 раза.",
+    icon: "Zap",
+    title: "Скорость через процессы",
+    desc: "Выстраиваем SLA с продуктом, аналитикой и финансами. Time-to-Market сокращается в 2 раза.",
   },
   {
-    title: "Команда как продукт",
-    desc: "Строю команды с нуля, внедряю процессы найма, онбординга и развития. Вырастил функцию с 2 до 37+ человек за 5 лет.",
+    icon: "Shield",
+    title: "Прозрачность для C-level",
+    desc: "Создаём дашборды и регулярные обзоры: performance, LTV, payback, channel mix, CAC — всё в одном месте.",
   },
 ];
 
 const whoFor = [
   {
-    type: "Продуктовые компании и стриминги",
-    desc: "Выстрою acquisition-воронку, снижу CAC, масштабирую базу подписчиков, запущу партнёрский канал.",
+    icon: "Smartphone",
+    type: "Подписочные сервисы",
+    desc: "Выстроим acquisition-воронку, снизим CAC, масштабируем базу подписчиков, запустим партнёрский канал.",
   },
   {
+    icon: "ShoppingCart",
     type: "E-commerce и маркетплейсы",
-    desc: "Вырасту GMV через рост частоты, AOV и удержания, оптимизирую P&L marketing-функции.",
+    desc: "Вырастим GMV через рост частоты, AOV и удержания, оптимизируем P&L marketing-функции.",
   },
   {
-    type: "Фаундеры и сооснователи",
-    desc: "Помогу выстроить growth-систему, привлечь первые миллионы пользователей и обеспечить окупаемость.",
+    icon: "Rocket",
+    type: "Стартапы на масштабировании",
+    desc: "Поможем выстроить growth-систему, привлечь первые миллионы пользователей с окупаемостью.",
   },
   {
-    type: "Компании перед международной экспансией",
-    desc: "Локализую стратегии привлечения и монетизации под новые рынки. Опыт: UZ, KZ, MENA.",
+    icon: "Globe",
+    type: "Международная экспансия",
+    desc: "Локализуем стратегии привлечения и монетизации. Опыт: UZ, KZ, MENA (Yango Play).",
   },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6 border-t border-border/40">
+    <section id="about" className="py-24 px-6 bg-white border-t border-border">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-12 gap-16">
+        <div className="grid md:grid-cols-12 gap-12 mb-20">
           <div className="md:col-span-5">
-            <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Обо мне</p>
-            <h2 className="font-display text-4xl md:text-5xl font-light mb-8 leading-tight">
-              Руковожу ростом<br />как бизнесом
+            <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">О нас</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6 leading-tight">
+              Управляем ростом<br />как бизнесом
             </h2>
-            <div className="space-y-5 text-muted-foreground text-sm leading-relaxed">
+            <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
               <p>
-                Более 7 лет я управляю привлечением, монетизацией и удержанием пользователей в крупных B2C-сервисах. Специализация — growth на стыке маркетинга, продукта и аналитики.
+                Более 7 лет работаем с привлечением, монетизацией и удержанием пользователей в крупных B2C-сервисах. Специализация — growth на стыке маркетинга, продукта и аналитики.
               </p>
               <p>
-                Прошёл путь от performance-маркетолога до Head of Acquisition с командой 37+ человек и бюджетом в несколько млрд рублей. За это время построил партнёрский канал с нуля, вывел сервис на международные рынки и помог вырастить базу с 1,5 млн до 35+ млн подписчиков.
+                Прошли путь от performance-маркетинга до управления командой 37+ человек с бюджетом в несколько млрд рублей. За это время построили партнёрский канал с нуля, вывели сервисы на международные рынки и помогли вырастить базу с 1,5 млн до 35+ млн подписчиков.
               </p>
               <p>
-                Работаю на стыке стратегии и операционки: ставлю цели через P&L, проверяю гипотезы экспериментами, строю процессы для скорости и прозрачности.
+                Работаем на стыке стратегии и операционки: ставим цели через P&L, проверяем гипотезы экспериментами, строим процессы для скорости и прозрачности.
               </p>
             </div>
           </div>
 
           <div className="md:col-span-7">
-            <p className="text-xs tracking-widest uppercase text-muted-foreground mb-8">Как я работаю</p>
-            <div className="grid md:grid-cols-2 gap-px bg-border/30">
+            <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-6">Как мы работаем</p>
+            <div className="grid md:grid-cols-2 gap-4">
               {principles.map((p) => (
-                <div key={p.title} className="bg-background p-6 group hover:bg-card transition-colors duration-300">
-                  <h3 className="text-sm font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
-                    {p.title}
-                  </h3>
+                <div
+                  key={p.title}
+                  className="bg-card border border-border rounded-xl p-5 hover:border-primary/25 hover:shadow-sm transition-all group"
+                >
+                  <div className="w-8 h-8 bg-primary/8 rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary/15 transition-colors">
+                    <Icon name={p.icon} size={16} className="text-primary" />
+                  </div>
+                  <h3 className="font-display font-bold text-sm text-foreground mb-1.5">{p.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               ))}
@@ -83,13 +99,18 @@ export default function AboutSection() {
         </div>
 
         {/* Who for */}
-        <div className="mt-24">
-          <p className="text-xs tracking-widest uppercase text-muted-foreground mb-10">Для кого я</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border/30">
+        <div>
+          <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-8">Для кого</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {whoFor.map((w) => (
-              <div key={w.type} className="bg-background p-7 group hover:bg-card transition-colors duration-300">
-                <div className="w-6 h-px bg-gold mb-4" />
-                <h3 className="text-sm font-semibold text-foreground mb-3">{w.type}</h3>
+              <div
+                key={w.type}
+                className="bg-card border border-border rounded-xl p-6 hover:border-primary/25 hover:shadow-sm transition-all group"
+              >
+                <div className="w-10 h-10 bg-primary/8 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
+                  <Icon name={w.icon} size={20} className="text-primary" />
+                </div>
+                <h3 className="font-display font-bold text-sm text-foreground mb-2">{w.type}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{w.desc}</p>
               </div>
             ))}

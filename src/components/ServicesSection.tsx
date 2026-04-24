@@ -1,15 +1,17 @@
+import Icon from "@/components/ui/icon";
+
 const formats = [
   {
     icon: "Briefcase",
     title: "Head / Director по росту",
     badge: "Full-time · C-level",
-    desc: "Принимаю ответственность за P&L, команду и результат.",
+    desc: "Принимаем ответственность за P&L, команду и результат.",
     items: [
       "Постановка growth-стратегии с опорой на unit-экономику",
       "Управление привлечением, монетизацией и удержанием",
       "Построение или реструктуризация команды и процессов",
     ],
-    expected: "Управляемый рост GMV/MAU/Subscribers при контроле CAC и LTV",
+    expected: "Управляемый рост GMV/MAU при контроле CAC и LTV",
   },
   {
     icon: "LineChart",
@@ -27,23 +29,23 @@ const formats = [
     icon: "Target",
     title: "Аудит performance и партнёрки",
     badge: "Проектно · 2–4 недели",
-    desc: "Нахожу потери в performance-каналах и точки роста в партнёрской дистрибуции.",
+    desc: "Находим потери в performance-каналах и точки роста в партнёрской дистрибуции.",
     items: [
-      "Анализ фрода, атрибуции и качества трафика по каналам",
-      "Оценка потенциала партнёрского канала и бизнес-модели",
+      "Анализ фрода, атрибуции и качества трафика",
+      "Оценка потенциала партнёрского канала",
       "Рекомендации по оптимизации и запуску новых каналов",
     ],
     expected: "Снижение CAC на 10–30% без потери объёма",
   },
   {
     icon: "Users",
-    title: "Построение команды growth/marketing",
+    title: "Построение команды growth",
     badge: "Проектно · Консалтинг",
-    desc: "Помогаю выстроить функцию с нуля или реструктурировать существующую.",
+    desc: "Помогаем выстроить функцию с нуля или реструктурировать существующую.",
     items: [
       "Дизайн оргструктуры, ролей и KPI для команды",
       "Внедрение growth-подхода, A/B-экспериментов и SLA",
-      "Помощь с наймом и онбордингом ключевых руководителей",
+      "Помощь с наймом ключевых руководителей",
     ],
     expected: "Функция, которая работает как система, а не как набор людей",
   },
@@ -51,61 +53,66 @@ const formats = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 px-6 border-t border-border/40">
+    <section id="services" className="py-24 px-6 bg-card/50 border-t border-border">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-6">
-          <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Форматы работы</p>
-          <h2 className="font-display text-4xl md:text-5xl font-light mb-4">Чем могу быть полезен</h2>
-          <p className="text-muted-foreground text-base max-w-xl">
-            Работаю с компаниями, которым нужен рост с понятной unit-экономикой — от стартапов до enterprise.
+        <div className="mb-14">
+          <p className="text-primary text-xs font-semibold tracking-widest uppercase mb-3">Услуги</p>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3">Форматы работы</h2>
+          <p className="text-muted-foreground max-w-lg text-sm">
+            Работаем с компаниями, которым нужен рост с понятной unit-экономикой — от стартапов до крупных B2C-сервисов.
           </p>
         </div>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-px bg-border/30">
+        <div className="grid md:grid-cols-2 gap-5 mb-10">
           {formats.map((f) => (
-            <div key={f.title} className="bg-background p-8 md:p-10 group hover:bg-card transition-colors duration-300">
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-10 h-10 border border-border/60 flex items-center justify-center group-hover:border-gold/40 transition-colors">
-                  <span className="text-gold text-xs">→</span>
+            <div
+              key={f.title}
+              className="bg-white border border-border rounded-xl p-7 hover:shadow-md hover:border-primary/20 transition-all group"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-11 h-11 bg-primary/8 rounded-xl flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                  <Icon name={f.icon} size={22} className="text-primary" />
                 </div>
-                <span className="text-[10px] tracking-widest text-muted-foreground uppercase border border-border/40 px-2 py-1">
+                <span className="text-[10px] font-semibold tracking-wider text-muted-foreground uppercase bg-secondary px-2.5 py-1.5 rounded-md">
                   {f.badge}
                 </span>
               </div>
 
-              <h3 className="font-display text-xl md:text-2xl font-light mb-2 text-foreground">{f.title}</h3>
-              <p className="text-sm text-muted-foreground mb-6">{f.desc}</p>
+              <h3 className="font-display font-bold text-lg text-foreground mb-1.5">{f.title}</h3>
+              <p className="text-sm text-muted-foreground mb-5">{f.desc}</p>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 mb-5">
                 {f.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-foreground/70">
-                    <span className="text-gold flex-shrink-0 mt-0.5 text-xs">›</span>
+                    <span className="text-primary flex-shrink-0 mt-1 w-1 h-1 rounded-full bg-primary block" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="border-t border-border/40 pt-5">
+              <div className="border-t border-border pt-4">
                 <p className="text-xs text-muted-foreground">
-                  <span className="text-gold">Ожидаемый результат:</span> {f.expected}
+                  <span className="text-primary font-semibold">Результат: </span>{f.expected}
                 </p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 border border-border/40 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-primary rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <h3 className="font-display text-2xl md:text-3xl font-light mb-2">Нужен рост с понятной unit-экономикой?</h3>
-            <p className="text-muted-foreground text-sm max-w-lg">
+            <h3 className="font-display font-bold text-2xl md:text-3xl text-white mb-2">
+              Нужен рост с понятной unit-экономикой?
+            </h3>
+            <p className="text-white/75 text-sm max-w-lg">
               Обсудим задачи вашего бизнеса — привлечение, монетизация, снижение CAC или запуск нового канала.
             </p>
           </div>
           <a
             href="#contact"
-            className="flex-shrink-0 bg-gold text-primary-foreground px-8 py-3.5 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="flex-shrink-0 bg-white text-primary px-8 py-3.5 rounded-md text-sm font-bold hover:bg-white/90 transition-colors whitespace-nowrap"
           >
-            Написать мне
+            Написать нам
           </a>
         </div>
       </div>

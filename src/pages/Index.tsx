@@ -21,15 +21,20 @@ export default function Index() {
       <ServicesSection />
       <ContactSection />
 
-      <footer className="border-t border-border/40 py-8 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          <span className="font-display text-lg text-gold tracking-[0.2em] uppercase">HoG</span>
-          <p className="text-xs text-muted-foreground tracking-wide">
-            Head of Growth & Monetisation · Системный рост через данные
+      <footer className="border-t border-border bg-white py-8 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 bg-primary rounded-md flex items-center justify-center">
+              <span className="text-white font-display font-bold text-xs leading-none">GR</span>
+            </div>
+            <span className="font-display font-bold text-foreground text-sm">GrowthRate</span>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Growth & Monetisation · Системный рост через данные и процессы
           </p>
           <div className="flex items-center gap-5">
             {["Telegram", "LinkedIn", "Email"].map((s) => (
-              <a key={s} href="#contact" className="text-xs text-muted-foreground hover:text-gold transition-colors tracking-wide">
+              <a key={s} href="#contact" className="text-xs text-muted-foreground hover:text-primary transition-colors font-medium">
                 {s}
               </a>
             ))}
